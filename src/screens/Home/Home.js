@@ -12,7 +12,7 @@ function Home ({history}){
 
     useEffect(() => {
         if (userInfo) {
-            history.push("/");
+            navigate("/");
         }
     }, [history, userInfo]);
     

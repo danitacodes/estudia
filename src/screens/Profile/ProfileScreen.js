@@ -7,7 +7,7 @@ import { update } from "../../actions/userActions"
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-const Profile = ({ location, history }) => {
+const Profile = ({ location, navigate }) => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +23,7 @@ const Profile = ({ location, history }) => {
 
   useEffect(() => {
     if (!userInfo) {
-      history.push("/");
+      navigate("/");
     } else {
       setUserName(userInfo.username);
       setEmail(userInfo.email);

@@ -10,7 +10,7 @@ import {
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 
-function EditStudy({ match, history }) {
+function EditStudy({ match, navigate }) {
   const [assignment, setAssignment] = useState();
   const [minutes, setMinutes] = useState();
   const [subject, setSubject] = useState();
@@ -29,7 +29,7 @@ function EditStudy({ match, history }) {
     if (window.confirm("Are you sure?")) {
       dispatch(deleteStudyAction(id));
     }
-    history.push("/studylist");
+    navigate("/studylist");
   };
 
   useEffect(() => {
@@ -63,7 +63,7 @@ function EditStudy({ match, history }) {
     if (!assignment || !minutes || !subject || !notes) return;
 
     resetHandler();
-    history.push("/studylist");
+    navigate("/studylist");
   };
 
   return (

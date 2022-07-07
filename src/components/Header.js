@@ -11,11 +11,11 @@ const Header = ()  => {
 
   const { userInfo } = userLogin;
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const logoutHandler = () => {
     dispatch(logout());
-    history.push("/");
+    navigate("/");
   };
 
   useEffect(() => {}, [userInfo]);

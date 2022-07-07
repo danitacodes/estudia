@@ -10,7 +10,7 @@ import { signin } from '../../actions/userActions';
 
 
 
-function Signin({history}) {
+function Signin({navigate}) {
 
   const [username, setUsername] = useState ('');
   const [email, setEmail] = useState('');
@@ -23,9 +23,9 @@ function Signin({history}) {
 
  useEffect(() => {
    if (userInfo) {
-     history.push("/studypage")
+     navigate("/studypage")
    }
- }, [history, userInfo]);
+ }, [navigate, userInfo]);
 
 
   const submitHandler = (e) => {

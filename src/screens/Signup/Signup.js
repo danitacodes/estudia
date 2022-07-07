@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from '../../actions/userActions';
 import "../Signin/SigninScreen";
 
-function Signup({ history }) {
+function Signup({ navigate }) {
 
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -23,9 +23,9 @@ function Signup({ history }) {
 
     useEffect(() => {
       if (userInfo) {
-        history.push("/studypage");
+        navigate("/studypage");
       }
-    }, [history, userInfo])
+    }, [navigate, userInfo])
 
     const submitHandler = (e) => {
       e.preventDefault();
