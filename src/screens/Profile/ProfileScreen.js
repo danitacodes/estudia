@@ -6,10 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { update } from "../../actions/userActions"
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
-import { useNavigate } from "react-router-dom";
 
-const Profile = () => {
-  const navigate = useNavigate()
+const Profile = ({location, navigate}) => {
+  
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,8 +29,8 @@ const Profile = () => {
       setUserName(userInfo.username);
       setEmail(userInfo.email);
     }
-    //eslint-disable-next-line
-  }, []);
+    
+  }, [navigate, userInfo]);
 
 
   const submitHandler = (e) => {

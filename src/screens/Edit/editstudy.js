@@ -11,8 +11,8 @@ import {
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 
-function EditStudy({ match }) {
-  const navigate = useNavigate()
+function EditStudy({ match, navigate }) {
+  
   const [assignment, setAssignment] = useState();
   const [minutes, setMinutes] = useState();
   const [subject, setSubject] = useState();

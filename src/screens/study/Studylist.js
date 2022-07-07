@@ -9,7 +9,7 @@ import { deleteStudyAction, listStudy } from "../../actions/studyActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-function StudyList () {
+function StudyList ({ history }) {
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -41,6 +41,7 @@ function StudyList () {
     //eslint-disable-next-line
   }, [
     dispatch,
+    history,
     userInfo,
     successDelete,
     successCreate,

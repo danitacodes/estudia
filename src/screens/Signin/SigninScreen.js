@@ -10,8 +10,8 @@ import { signin } from '../../actions/userActions';
 
 
 
-function Signin() {
-  const navigate = useNavigate()
+function Signin({navigate}) {
+  
 
   const [username, setUsername] = useState ('');
   const [email, setEmail] = useState('');
@@ -26,8 +26,7 @@ function Signin() {
    if (userInfo) {
      navigate("/studypage")
    }
-   //eslint-disable-next-line
- }, []);
+ }, [navigate, userInfo]);
 
 
   const submitHandler = (e) => {
