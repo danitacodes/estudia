@@ -10,8 +10,8 @@ import { signin } from '../../actions/userActions';
 
 
 
-function Signin({navigate}) {
-  
+function Signin({history}) {
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState ('');
   const [email, setEmail] = useState('');
@@ -26,7 +26,7 @@ function Signin({navigate}) {
    if (userInfo) {
      navigate("/studypage")
    }
- }, [navigate, userInfo]);
+ }, [history, userInfo]);
 
 
   const submitHandler = (e) => {
