@@ -7,7 +7,7 @@ import { update } from "../../actions/userActions"
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-const Profile = ({ location, navigate }) => {
+const Profile = ({ location }) => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +28,7 @@ const Profile = ({ location, navigate }) => {
       setUserName(userInfo.username);
       setEmail(userInfo.email);
     }
-  }, [history, userInfo]);
+  }, [userInfo]);
 
 
   const submitHandler = (e) => {

@@ -8,7 +8,7 @@ import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
 
-function StudyPage({ history }) {
+function StudyPage() {
   const navigate = useNavigate()
   const [assignment, setAssignment] = useState('');
   const [minutes, setMinutes] = useState('');

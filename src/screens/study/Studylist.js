@@ -9,7 +9,7 @@ import { deleteStudyAction, listStudy } from "../../actions/studyActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-function StudyList ({ navigate }) {
+function StudyList () {
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -40,7 +40,6 @@ function StudyList ({ navigate }) {
     }
   }, [
     dispatch,
-    history,
     userInfo,
     successDelete,
     successCreate,

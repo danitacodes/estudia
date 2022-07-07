@@ -10,7 +10,7 @@ import { signin } from '../../actions/userActions';
 
 
 
-function Signin({navigate}) {
+function Signin() {
   const navigate = useNavigate()
 
   const [username, setUsername] = useState ('');
@@ -26,7 +26,7 @@ function Signin({navigate}) {
    if (userInfo) {
      navigate("/studypage")
    }
- }, [navigate, userInfo]);
+ }, [userInfo]);
 
 
   const submitHandler = (e) => {

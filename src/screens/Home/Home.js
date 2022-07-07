@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./../Home/Home.css";
 
 
-function Home ({navigate}){
+function Home () {
     const navigate = useNavigate()
 
     const userLogin = useSelector((state) => state.userLogin);
@@ -15,7 +15,7 @@ function Home ({navigate}){
         if (userInfo) {
             navigate("/");
         }
-    }, [navigate, userInfo]);
+    }, [userInfo]);
     
     return (
         <div className='main'>
