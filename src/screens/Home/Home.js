@@ -5,8 +5,9 @@ import { Link, useNavigate } from "react-router-dom";
 import "./../Home/Home.css";
 
 
-function Home () {
+function Home ({history}) {
     const navigate = useNavigate()
+    
 
     const userLogin = useSelector((state) => state.userLogin);
     const {userInfo} = userLogin;
@@ -15,8 +16,8 @@ function Home () {
         if (userInfo) {
             navigate("/");
         }
-        //eslint-disable-next-line
-    }, []);
+        
+    }, [history, userInfo]);
     
     return (
         <div className='main'>
