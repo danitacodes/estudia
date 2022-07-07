@@ -31,7 +31,7 @@ const Header = ()  => {
               <>
                 <Nav.Link as={Link} to='/studylist'>My Study Log</Nav.Link>
                 <NavDropdown title={userInfo?.username} id="basic-nav-dropdown">
-                  <NavDropdown.Item href="/profile">
+                  <NavDropdown.Item as={Link} to="/profile">
                     My Profile
                   </NavDropdown.Item>
                   <NavDropdown.Divider />

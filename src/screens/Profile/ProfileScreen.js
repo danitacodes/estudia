@@ -7,7 +7,7 @@ import { update } from "../../actions/userActions"
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-const Profile = ({location, navigate}) => {
+const Profile = ({ location, history }) => {
   
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,13 +24,13 @@ const Profile = ({location, navigate}) => {
 
   useEffect(() => {
     if (!userInfo) {
-      navigate("/");
+      history.push("/");
     } else {
       setUserName(userInfo.username);
       setEmail(userInfo.email);
     }
     
-  }, [navigate, userInfo]);
+  }, [history, userInfo]);
 
 
   const submitHandler = (e) => {

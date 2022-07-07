@@ -17,13 +17,13 @@ function App() {
      <Header />
      <main>
      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/signin' element={<Signin/>} />
-        <Route path='/profile' element={<Profile/>} />
-        <Route path='/signup' element={<Signup/>} />
-        <Route path='/studypage' element={<StudyPage/>} />
-        <Route path='/study/:id' element={<EditStudy/>} />
-        <Route path='/studylist' element={<StudyList/>} />
+        <Route path='/' element={ <Home/> } />
+        <Route path='/signin' element={ <Signin/> } />
+        <Route path='/profile' element={ <Profile/> } />
+        <Route path='/signup' element={ <Signup/> } />
+        <Route path='/studypage' element={ <StudyPage/> } />
+        <Route path='/study/:id' element={ <EditStudy/> } />
+        <Route path='/studylist' element={ <StudyList/> } />
      </Routes>
      </main>
      <Footer />

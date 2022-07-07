@@ -36,9 +36,8 @@ function StudyList ({ history }) {
   useEffect(() => {
     dispatch(listStudy());
     if (!userInfo) {
-      navigate("/");
+      history.push("/");
     }
-    //eslint-disable-next-line
   }, [
     dispatch,
     history,

@@ -30,12 +30,12 @@ function Home ({history}) {
                         </div>
                         <div className='buttonContainer'>
                             <Link to='/signin'>
-                                <Button size='lg' className='homebutton'>
+                                <Button size='md' className='homebutton'>
                                     Signin
                                 </Button>
                             </Link>
                             <Link to='/signup'>
-                                <Button size='lg' className='homebutton'>
+                                <Button size='md' className='homebutton'>
                                     Signup
                                 </Button>
                             </Link>

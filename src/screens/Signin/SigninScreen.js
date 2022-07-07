@@ -2,7 +2,7 @@ import { React,  useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ErrorMessage from '../../components/ErrorMessage';
 import  Loading from '../../components/Loading';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button, Form, Row, Col } from "react-bootstrap";
 import '../Signin/SigninScreen.css';
 import MainScreen from "../../components/mainScreen";
@@ -24,7 +24,7 @@ function Signin({history}) {
 
  useEffect(() => {
    if (userInfo) {
-     navigate("/studypage")
+     history.push("/studypage")
    }
  }, [history, userInfo]);
 
