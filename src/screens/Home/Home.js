@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { Container, Row, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./../Home/Home.css";
 
 
 function Home ({navigate}){
+    const navigate = useNavigate()
 
     const userLogin = useSelector((state) => state.userLogin);
     const {userInfo} = userLogin;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MainScreen from "../../components/mainScreen";
 import axios from "axios";
 import { Button, Form, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   updateStudyAction,
@@ -11,6 +12,7 @@ import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 
 function EditStudy({ match, navigate }) {
+  const navigate = useNavigate()
   const [assignment, setAssignment] = useState();
   const [minutes, setMinutes] = useState();
   const [subject, setSubject] = useState();

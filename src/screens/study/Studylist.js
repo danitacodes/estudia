@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Accordion, Button, Card } from "react-bootstrap";
 import MainScreen from "../../components/mainScreen"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 import { useDispatch, useSelector } from "react-redux";
@@ -9,8 +9,9 @@ import { deleteStudyAction, listStudy } from "../../actions/studyActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-function StudyList ({ history }) {
+function StudyList ({ navigate }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const studyList = useSelector((state) => state.studyList);
   const { loading, error, study } = studyList;
@@ -35,7 +36,7 @@ function StudyList ({ history }) {
   useEffect(() => {
     dispatch(listStudy());
     if (!userInfo) {
-      history.push("/");
+      navigate("/");
     }
   }, [
     dispatch,
