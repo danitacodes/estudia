@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { update } from "../../actions/userActions"
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
+import { useNavigate } from "react-router-dom";
 
-const Profile = ({ location }) => {
+const Profile = () => {
+  const navigate = useNavigate()
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
