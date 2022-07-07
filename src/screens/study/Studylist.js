@@ -38,6 +38,7 @@ function StudyList () {
     if (!userInfo) {
       navigate("/");
     }
+    //eslint-disable-next-line
   }, [
     dispatch,
     userInfo,

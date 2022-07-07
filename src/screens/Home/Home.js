@@ -15,7 +15,8 @@ function Home () {
         if (userInfo) {
             navigate("/");
         }
-    }, [userInfo]);
+        //eslint-disable-next-line
+    }, []);
     
     return (
         <div className='main'>

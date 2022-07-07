@@ -30,7 +30,8 @@ const Profile = () => {
       setUserName(userInfo.username);
       setEmail(userInfo.email);
     }
-  }, [userInfo]);
+    //eslint-disable-next-line
+  }, []);
 
 
   const submitHandler = (e) => {

@@ -26,7 +26,8 @@ function Signup() {
       if (userInfo) {
         navigate("/studypage");
       }
-    }, [userInfo])
+      //eslint-disable-next-line
+    }, [])
 
     const submitHandler = (e) => {
       e.preventDefault();
