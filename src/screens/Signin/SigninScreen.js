@@ -25,8 +25,6 @@ function Signin() {
  useEffect(() => {
    if (userInfo) {
      navigate("/studypage")
-   } else {
-    navigate('/')
    }
  }, [userInfo]);
 
