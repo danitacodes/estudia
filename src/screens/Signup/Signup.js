@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import MainScreen from "../../components/mainScreen";
 import ErrorMessage from "../../components/ErrorMessage";
@@ -9,7 +9,6 @@ import { register } from '../../actions/userActions';
 import "../Signin/SigninScreen";
 
 function Signup({ history }) {
-    const navigate = useNavigate()
 
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');

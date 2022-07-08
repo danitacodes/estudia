@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
 import { Accordion, Button, Card } from "react-bootstrap";
 import MainScreen from "../../components/mainScreen"
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+
 import { useDispatch, useSelector } from "react-redux";
-import { deleteStudyAction } from "../../actions/studyActions";
-import listStudy from '../../actions/studyActions';
+import { deleteStudyAction, listStudy } from "../../actions/studyActions";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-function StudyList () {
+function StudyList ({ history }) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const studyList = useSelector((state) => state.studyList);
   const { loading, error, study } = studyList;
@@ -35,14 +35,16 @@ function StudyList () {
   useEffect(() => {
     dispatch(listStudy());
     if (!userInfo) {
-      navigate("/");
+      history.push("/");
     }
   }, [
     dispatch,
+    history,
     userInfo,
     successDelete,
     successCreate,
     successUpdate,
+  
   ]);
 
   const deleteHandler = (id) => {

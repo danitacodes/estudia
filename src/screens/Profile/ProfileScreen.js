@@ -8,7 +8,6 @@ import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
 const Profile = ({ location, history }) => {
-  
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +28,6 @@ const Profile = ({ location, history }) => {
       setUserName(userInfo.username);
       setEmail(userInfo.email);
     }
-    
   }, [history, userInfo]);
 
 

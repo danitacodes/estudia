@@ -11,7 +11,6 @@ import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 
 function EditStudy({ match, history }) {
-  
   const [assignment, setAssignment] = useState();
   const [minutes, setMinutes] = useState();
   const [subject, setSubject] = useState();

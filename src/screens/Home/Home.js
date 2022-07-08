@@ -1,22 +1,19 @@
 import React, { useEffect } from "react";
 import { Container, Row, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./../Home/Home.css";
 
 
-function Home ({history}) {
-    const navigate = useNavigate()
-    
+function Home ({history}){
 
     const userLogin = useSelector((state) => state.userLogin);
     const {userInfo} = userLogin;
 
     useEffect(() => {
         if (userInfo) {
-            navigate("/");
+            history.push("/");
         }
-        
     }, [history, userInfo]);
     
     return (
@@ -30,12 +27,12 @@ function Home ({history}) {
                         </div>
                         <div className='buttonContainer'>
                             <Link to='/signin'>
-                                <Button size='md' className='homebutton'>
+                                <Button size='lg' className='homebutton'>
                                     Signin
                                 </Button>
                             </Link>
                             <Link to='/signup'>
-                                <Button size='md' className='homebutton'>
+                                <Button size='lg' className='homebutton'>
                                     Signup
                                 </Button>
                             </Link>

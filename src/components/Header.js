@@ -1,21 +1,21 @@
 import { useEffect } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { logout } from "../actions/userActions";
 
-const Header = ()  => {
+function Header() {
   const dispatch = useDispatch();
 
   const userLogin = useSelector((state) => state.userLogin);
 
   const { userInfo } = userLogin;
 
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const logoutHandler = () => {
     dispatch(logout());
-    navigate("/");
+    history.push("/");
   };
 
   useEffect(() => {}, [userInfo]);
@@ -29,9 +29,9 @@ const Header = ()  => {
           <Nav>
             {userInfo ? (
               <>
-                <Nav.Link as={Link} to='/studylist'>My Study Log</Nav.Link>
+                <Nav.Link href="/studylist">My Study Log</Nav.Link>
                 <NavDropdown title={userInfo?.username} id="basic-nav-dropdown">
-                  <NavDropdown.Item as={Link} to="/profile">
+                  <NavDropdown.Item href="/profile">
                     My Profile
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
@@ -41,7 +41,7 @@ const Header = ()  => {
                 </NavDropdown>
               </>
             ) : (
-              <Nav.Link as={Link} to='/signin'>Signin</Nav.Link>
+              <Nav.Link href="/signin">Signin</Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>
@@ -50,4 +50,4 @@ const Header = ()  => {
   );
 }
 
-export default Header
+export default Header;

@@ -2,7 +2,7 @@ import { React,  useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ErrorMessage from '../../components/ErrorMessage';
 import  Loading from '../../components/Loading';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button, Form, Row, Col } from "react-bootstrap";
 import '../Signin/SigninScreen.css';
 import MainScreen from "../../components/mainScreen";
@@ -10,23 +10,22 @@ import { signin } from '../../actions/userActions';
 
 
 
-function Signin() {
-  
+function Signin({history}) {
+
   const [username, setUsername] = useState ('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo} = userLogin;
 
  useEffect(() => {
    if (userInfo) {
-     navigate("/studypage")
+     history.push("/studypage")
    }
- }, [userInfo]);
+ }, [history, userInfo]);
 
 
   const submitHandler = (e) => {
