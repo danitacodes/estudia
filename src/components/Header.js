@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import { logout } from "../actions/userActions";
 
 const Header = ()  => {
@@ -41,7 +41,7 @@ const Header = ()  => {
                 </NavDropdown>
               </>
             ) : (
-              <Nav.Link as={Link} to='/signin'>Signin</Nav.Link>
+              <Navigate to='/signin' />
             )}
           </Nav>
         </Navbar.Collapse>
