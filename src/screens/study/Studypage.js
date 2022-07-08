@@ -8,7 +8,7 @@ import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
 
-function StudyPage({ history }) {
+function StudyPage() {
   const navigate = useNavigate();
   const [assignment, setAssignment] = useState('');
   const [minutes, setMinutes] = useState('');
@@ -35,7 +35,7 @@ function StudyPage({ history }) {
     if (!assignment || !minutes || !subject || !notes) return;
 
     resetHandler();
-    history.push("/studylist");
+    navigate("/studylist");
   };
 
   useEffect(() => {}, []);
