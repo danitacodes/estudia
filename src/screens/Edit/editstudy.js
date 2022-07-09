@@ -66,7 +66,7 @@ function EditStudy({ match }) {
     if (!assignment || !minutes || !subject || !notes) return;
 
     resetHandler();
-    history.push("/studylist");
+    navigate("/studylist");
   };
 
   return (

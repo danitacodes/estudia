@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootswatch/dist/lux/bootstrap.min.css";
-import { BrowserRouter, Route} from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './screens/Home/Home';
