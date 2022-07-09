@@ -13,22 +13,22 @@ import Profile from './screens/Profile/ProfileScreen';
 
 function App() {
   return (
-    <div className="App">
-    <BrowserRouter>
-      <Header />
-      <main>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/signin" component={Signin} />
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/studypage" component={StudyPage} />
-        <Route exact path="/study/:id" component={EditStudy} />
-        <Route exact path="/studylist" component={StudyList} />
-      </main>
-      <Footer />
-    </BrowserRouter>
-  </div>
-);
+    <>
+     <Header />
+     <main>
+     <Routes>
+        <Route path='/' element={ <Home/> } />
+        <Route path='/signin' element={ <Signin/> } />
+        <Route path='/profile' element={ <Profile/> } />
+        <Route path='/signup' element={ <Signup/> } />
+        <Route path='/studypage' element={ <StudyPage/> } />
+        <Route path='/study/:id' element={ <EditStudy/> } />
+        <Route path='/studylist' element={ <StudyList/> } />
+     </Routes>
+     </main>
+     <Footer />
+    </>
+  );
 }
 
 export default App;

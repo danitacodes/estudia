@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MainScreen from "../../components/mainScreen";
 import axios from "axios";
 import { Button, Form, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   updateStudyAction,
@@ -10,7 +11,8 @@ import {
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 
-function EditStudy({ match, history }) {
+function EditStudy({ match }) {
+  
   const [assignment, setAssignment] = useState();
   const [minutes, setMinutes] = useState();
   const [subject, setSubject] = useState();
@@ -18,6 +20,7 @@ function EditStudy({ match, history }) {
   const [date, setDate] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const studyUpdate = useSelector((state) => state.studyUpdate);
   const { loading, error } = studyUpdate;
@@ -29,7 +32,7 @@ function EditStudy({ match, history }) {
     if (window.confirm("Are you sure?")) {
       dispatch(deleteStudyAction(id));
     }
-    history.push("/studylist");
+    navigate("/studylist");
   };
 
   useEffect(() => {

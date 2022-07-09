@@ -3,17 +3,20 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import MainScreen from "../../components/mainScreen";
 import "./ProfileScreen.css";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { update } from "../../actions/userActions"
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
-const Profile = ({ location, history }) => {
+const Profile = () => {
+  
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -23,12 +26,13 @@ const Profile = ({ location, history }) => {
 
   useEffect(() => {
     if (!userInfo) {
-      history.push("/");
+      navigate("/");
     } else {
       setUserName(userInfo.username);
       setEmail(userInfo.email);
     }
-  }, [history, userInfo]);
+    
+  }, [navigate, userInfo]);
 
 
   const submitHandler = (e) => {
