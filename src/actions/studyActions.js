@@ -31,7 +31,7 @@ export const listStudy = () => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `https://studyhabit.herokuapp.com/api/study`,
+      `https://danita-codes-study-tracker.herokuapp.com/api/study`,
       config
     );
 
@@ -70,7 +70,7 @@ export const createStudyAction =
       };
 
       const { data } = await axios.post(
-        `https://studyhabit.herokuapp.com/api/study/create`,
+        `https://danita-codes-study-tracker.herokuapp.com/api/study/create`,
         { assignment, minutes, subject, notes },
         config
       );
@@ -110,7 +110,7 @@ export const updateStudyAction =
       };
 
       const { data } = await axios.put(
-        `https://studyhabit.herokuapp.com/api/study/${id}`,
+        `https://danita-codes-study-tracker.herokuapp.com/api/study/${id}`,
         { assignment, minutes, subject, notes },
         config
       );
@@ -148,7 +148,7 @@ export const deleteStudyAction = (id) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.delete(
-      `https://studyhabit.herokuapp.com/api/study/${id}`,
+      `https://danita-codes-study-tracker.herokuapp.com/api/study/${id}`,
       config
     );
 

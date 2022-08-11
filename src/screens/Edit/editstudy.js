@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MainScreen from "../../components/mainScreen";
 import axios from "axios";
 import { Button, Form, Card } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   updateStudyAction,
@@ -11,7 +11,7 @@ import {
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 
-function EditStudy({ match }) {
+function EditStudy() {
   
   const [assignment, setAssignment] = useState();
   const [minutes, setMinutes] = useState();
@@ -21,6 +21,7 @@ function EditStudy({ match }) {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const params = useParams();
 
   const studyUpdate = useSelector((state) => state.studyUpdate);
   const { loading, error } = studyUpdate;
@@ -38,7 +39,7 @@ function EditStudy({ match }) {
   useEffect(() => {
     const fetching = async () => {
       const { data } = await axios.get(
-        `https://studyhabit.herokuapp.com/api/study/${match.params.id}`
+        `https://studyhabit.herokuapp.com/api/study/${params.id}`
       );
 
       setAssignment(data.assignment);
@@ -49,7 +50,7 @@ function EditStudy({ match }) {
     };
 
     fetching();
-  }, [match.params.id, date]);
+  }, [params.id, date]);
 
   const resetHandler = () => {
     setAssignment("");
@@ -61,7 +62,7 @@ function EditStudy({ match }) {
   const updateHandler = (e) => {
     e.preventDefault();
     dispatch(
-      updateStudyAction(match.params.id, assignment, minutes, subject, notes)
+      updateStudyAction(params.id, assignment, minutes, subject, notes)
     );
     if (!assignment || !minutes || !subject || !notes) return;
 
@@ -126,7 +127,7 @@ function EditStudy({ match }) {
             <Button
               className="mx-2"
               variant="danger"
-              onClick={() => deleteHandler(match.params.id)}
+              onClick={() => deleteHandler(params.id)}
             >
               Delete Study Session
             </Button>

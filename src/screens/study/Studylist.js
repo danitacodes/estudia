@@ -69,8 +69,8 @@ function StudyList () {
       {study &&
         study.reverse()
           .map((study) => (
-            <Accordion>
-              <Card style={{ margin: 10 }} key={study._id}>
+            <Accordion key={study._id}>
+              <Card style={{ margin: 10 }} >
                 <Card.Header style={{ display: "flex" }}>
                   <span
                     style={{

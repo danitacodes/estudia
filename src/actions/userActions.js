@@ -23,7 +23,7 @@ import {
       };
   
       const { data } = await axios.post(
-        "https://studyhabit.herokuapp.com/api/users/signin",
+        "https://danita-codes-study-tracker.herokuapp.com/api/users/signin",
         { username, email, password },
         config
       );
@@ -58,7 +58,7 @@ import {
       };
   
       const { data } = await axios.post(
-        "https://studyhabit.herokuapp.com/api/users/signup",
+        "https://danita-codes-study-tracker.herokuapp.com/api/users/signup",
         { username, email, password },
         config
       );
@@ -95,7 +95,7 @@ import {
       };
   
       const { data } = await axios.post(
-        "https://studyhabit.herokuapp.com/api/users/profile",
+        "https://danita-codes-study-tracker.herokuapp.com/api/users/profile",
         user,
         config
       );
