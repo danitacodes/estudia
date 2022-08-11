@@ -11,7 +11,7 @@ Here is a live demo https://studytracker.netlify.app/
 # Site
 
 # Landing Page
-![](assets/studytracker1.png)
+![](src/assets/studytracker1.png)
 
 # Login
 Users can register for an account or login with an existing one.
