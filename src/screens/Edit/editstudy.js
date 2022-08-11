@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import MainScreen from "../../components/mainScreen";
 import axios from "axios";
 import { Button, Form, Card } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   updateStudyAction,
@@ -11,7 +10,7 @@ import {
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
 
-function EditStudy() {
+function EditStudy({ history, match }) {
   
   const [assignment, setAssignment] = useState();
   const [minutes, setMinutes] = useState();
@@ -20,8 +19,7 @@ function EditStudy() {
   const [date, setDate] = useState("");
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const params = useParams();
+ 
 
   const studyUpdate = useSelector((state) => state.studyUpdate);
   const { loading, error } = studyUpdate;
@@ -33,13 +31,13 @@ function EditStudy() {
     if (window.confirm("Are you sure?")) {
       dispatch(deleteStudyAction(id));
     }
-    navigate("/studylist");
+    history.push("/studylist");
   };
 
   useEffect(() => {
     const fetching = async () => {
       const { data } = await axios.get(
-        `https://studyhabit.herokuapp.com/api/study/${params.id}`
+        `https://studyhabit.herokuapp.com/api/study/${match.params.id}`
       );
 
       setAssignment(data.assignment);
@@ -50,7 +48,7 @@ function EditStudy() {
     };
 
     fetching();
-  }, [params.id, date]);
+  }, [match.params.id, date]);
 
   const resetHandler = () => {
     setAssignment("");
@@ -62,12 +60,12 @@ function EditStudy() {
   const updateHandler = (e) => {
     e.preventDefault();
     dispatch(
-      updateStudyAction(params.id, assignment, minutes, subject, notes)
+      updateStudyAction(match.params.id, assignment, minutes, subject, notes)
     );
     if (!assignment || !minutes || !subject || !notes) return;
 
     resetHandler();
-    navigate("/studylist");
+    history.push("/studylist");
   };
 
   return (
@@ -127,7 +125,7 @@ function EditStudy() {
             <Button
               className="mx-2"
               variant="danger"
-              onClick={() => deleteHandler(params.id)}
+              onClick={() => deleteHandler(match.params.id)}
             >
               Delete Study Session
             </Button>

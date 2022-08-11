@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom'
 import MainScreen from '../../components/mainScreen';
 import { Button, Card, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,8 +7,7 @@ import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 
 
-function StudyPage() {
-  const navigate = useNavigate();
+function StudyPage({ history }) {
   const [assignment, setAssignment] = useState('');
   const [minutes, setMinutes] = useState('');
   const [subject, setSubject] = useState('');
@@ -35,7 +33,7 @@ function StudyPage() {
     if (!assignment || !minutes || !subject || !notes) return;
 
     resetHandler();
-    navigate("/studylist");
+    history.push("/studylist");
   };
 
   useEffect(() => {}, []);

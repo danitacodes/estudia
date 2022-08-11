@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootswatch/dist/lux/bootstrap.min.css";
-import { Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './screens/Home/Home';
@@ -16,15 +16,15 @@ function App() {
     <>
      <Header />
      <main>
-     <Routes>
-        <Route path='/' element={ <Home/> } />
-        <Route path='/signin' element={ <Signin/> } />
-        <Route path='/profile' element={ <Profile/> } />
-        <Route path='/signup' element={ <Signup/> } />
-        <Route path='/studypage' element={ <StudyPage/> } />
-        <Route path='/study/:id' element={ <EditStudy/> } />
-        <Route path='/studylist' element={ <StudyList/> } />
-     </Routes>
+     <Router>
+        <Route path='/' component={Home} />
+        <Route path='/signin' component={Signin} />
+        <Route path='/profile' component={Profile} />
+        <Route path='/signup' component={Signup}/>
+        <Route path='/studypage' component={StudyPage} />
+        <Route path='/study/:id' component={EditStudy} />
+        <Route path='/studylist' component={StudyList} />
+     </Router>
      </main>
      <Footer />
     </>

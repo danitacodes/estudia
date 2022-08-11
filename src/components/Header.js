@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { } from "react-router-dom";
 import { logout } from "../actions/userActions";
 
 function Header() {
@@ -11,11 +11,9 @@ function Header() {
 
   const { userInfo } = userLogin;
 
-  const navigate = useNavigate();
 
   const logoutHandler = () => {
     dispatch(logout());
-    navigate("/");
   };
 
   useEffect(() => {}, [userInfo]);

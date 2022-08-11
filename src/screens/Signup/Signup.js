@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import MainScreen from "../../components/mainScreen";
 import ErrorMessage from "../../components/ErrorMessage";
@@ -8,8 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from '../../actions/userActions';
 import "../Signin/SigninScreen";
 
-function Signup() {
-    const navigate = useNavigate()
+function Signup({ history }) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -23,9 +22,9 @@ function Signup() {
 
     useEffect(() => {
       if (userInfo) {
-        navigate("/studypage");
+        history.push("/studypage");
       }
-    }, [navigate, userInfo])
+    }, [history, userInfo])
 
     const submitHandler = (e) => {
       e.preventDefault();
