@@ -1,4 +1,4 @@
-import { React,  useEffect, useState } from "react";
+import React,  {useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ErrorMessage from '../../components/ErrorMessage';
 import  Loading from '../../components/Loading';
@@ -18,13 +18,12 @@ function Signin({ history }) {
 
   const dispatch = useDispatch();
   
-
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo} = userLogin;
 
  useEffect(() => {
    if (userInfo) {
-    history.push("/studypage")
+    history.push("/studylist")
    }
  }, [history, userInfo]);
 
