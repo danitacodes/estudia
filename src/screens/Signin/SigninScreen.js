@@ -23,7 +23,7 @@ function Signin({ history }) {
 
  useEffect(() => {
    if (userInfo) {
-    history.push("/studylist")
+    history.push("/studypage")
    }
  }, [history, userInfo]);
 
