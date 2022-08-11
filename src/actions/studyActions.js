@@ -31,7 +31,7 @@ export const listStudy = () => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      `https://danita-codes-study-tracker.herokuapp.com/api/study`,
+      `https://danita-codes-study-tracker.herokuapp.com/api/study/https://studytracker.netlify.app`,
       config
     );
 
@@ -66,11 +66,12 @@ export const createStudyAction =
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${userInfo.token}`,
+          Origin: "https://studytracker.netlify.app"
         },
       };
 
       const { data } = await axios.post(
-        `https://danita-codes-study-tracker.herokuapp.com/api/study/create`,
+        `https://danita-codes-study-tracker.herokuapp.com/api/study/create/https://studytracker.netlify.app`,
         { assignment, minutes, subject, notes },
         config
       );
