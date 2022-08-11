@@ -24,7 +24,7 @@ function Signin({ history }) {
 
  useEffect(() => {
    if (userInfo) {
-     history.push("/studypage")
+    history.push("/studypage")
    }
  }, [history, userInfo]);
 
