@@ -15,19 +15,19 @@ Here is a live demo https://studytracker.netlify.app/
 
 # Login
 Users can register for an account or login with an existing one.
-![](assets/studylogin.png)
+![](src/assets/studyloginscreen.png)
 
 # Edit Profile
-![](assets/editprofile.png)
+![](src/assets/editprofile.png)
 
 # Create Study
-![](assets/studypage.png)
+![](src/assets/studypage.png)
 
 # View All studies
-![](assets/studylog.png)
+![](src/assets/studylog.png)
 
 # Edit Study
-![](assets/studyedit.png)
+![](src/assets/studyedit.png)
 
 # Created with
 React JS, Node JS, Express JS, MongoDB, Bootstrap
