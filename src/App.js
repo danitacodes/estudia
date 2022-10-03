@@ -1,5 +1,5 @@
 import "./App.css";
-import "bootswatch/dist/minty/bootstrap.min.css"; // Added this :boom:
+import "bootswatch/dist/lux/bootstrap.min.css"; // Added this :boom:
 import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -18,12 +18,12 @@ function App() {
         <Header />
         <main>
           <Route exact path="/" component={Home} />
-          <Route exact path="/signin" component={Signin} />
-          <Route exact path="/profile" component={Profile} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/studypage" component={StudyPage} />
-          <Route exact path="/study/:id" component={EditStudy} />
-          <Route exact path="/studylist" component={StudyList} />
+          <Route path="/signin" component={Signin} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/studypage" component={StudyPage} />
+          <Route path="/study/:id" component={EditStudy} />
+          <Route path="/studylist" component={StudyList} />
         </main>
         <Footer />
       </BrowserRouter>
